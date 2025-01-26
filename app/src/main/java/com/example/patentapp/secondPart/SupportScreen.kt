@@ -2,21 +2,28 @@ package com.example.patentapp.secondPart
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -28,6 +35,8 @@ import com.example.patentapp.ui.theme.LanguageBackground
 
 @Composable
 fun SupportScreen(cardA:String,cardB:String,nameA:String,nameB:String) {
+    val clipboardManager = LocalClipboardManager.current
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -87,14 +96,21 @@ fun SupportScreen(cardA:String,cardB:String,nameA:String,nameB:String) {
                     )
                     .padding(vertical = 4.dp, horizontal = 6.dp),
             ) {
+                Row(
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxSize().padding(horizontal = 6.dp)
+                ) {
+                    Icon(painter = painterResource(R.drawable.sber), contentDescription = null, modifier = Modifier.size(60.dp))
+                    Text(
+                        text = cardA,
 
-                Text(
-                    text = cardA,
+                        fontSize = 24.sp,
+                        color = Color.Black,
+                    )
+                    Icon(painter = painterResource(R.drawable.copy), contentDescription = null, modifier = Modifier.size(30.dp).padding(horizontal = 6.dp).clickable { clipboardManager.setText(androidx.compose.ui.text.AnnotatedString(cardA)) },)
 
-                    fontSize = 24.sp,
-                    color = Color.Black,
-                    modifier = Modifier.align(Alignment.Center)
-                )
+
+                }
             }
             Spacer(modifier = Modifier.height(18.dp))
             Text(
@@ -115,15 +131,21 @@ fun SupportScreen(cardA:String,cardB:String,nameA:String,nameB:String) {
                     )
                     .padding(vertical = 4.dp, horizontal = 6.dp),
             ) {
-
+                Row(
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxSize().padding(horizontal = 6.dp)
+                ) {
                 Text(
                     text = cardB,
 
                     fontSize = 24.sp,
-                    color = Color.Black,
-                     modifier = Modifier.align(Alignment.Center)
+                    color = Color.Black, modifier = Modifier.padding(horizontal = 6.dp)
+
                 )
-            }
+                    Icon(painter = painterResource(R.drawable.copy), contentDescription = null, modifier = Modifier.size(30.dp).padding(horizontal = 6.dp).clickable { clipboardManager.setText(androidx.compose.ui.text.AnnotatedString(cardB)) },)
+
+
+                }}
         }
 
     }

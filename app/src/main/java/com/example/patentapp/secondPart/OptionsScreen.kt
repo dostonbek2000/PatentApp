@@ -35,7 +35,7 @@ import com.example.patentapp.ui.theme.TextColor
 @Composable
 fun OptionsScreen(onCategorySelected: (Int) -> Unit,navController: NavController) {
 
-    val categories = listOf("Варианты 1", "Варианты 2","Варианты 3","Варианты 4","Варианты 5")
+    val categories = listOf("Варианты 1", "Варианты 2","Варианты 3","Варианты 4","Варианты 5","Варианты 6")
    Column(modifier = Modifier.fillMaxSize().background(LanguageBackground), verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.CenterHorizontally) {
        Box(
            contentAlignment = Alignment.CenterStart, // Aligns content in the center

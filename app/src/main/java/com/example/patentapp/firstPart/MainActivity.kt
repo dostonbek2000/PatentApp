@@ -78,7 +78,7 @@ fun AppNavigation(context: Context) {
                 onQuizFinished = { score, totalQuestions ->
                     navController.navigate("result/$score/$totalQuestions")
                 },
-                questions = questions
+                questions = questions,
             )
         }
 
@@ -87,7 +87,7 @@ fun AppNavigation(context: Context) {
             val totalQuestions = backStackEntry.arguments?.getString("totalQuestions")?.toInt() ?: 0
             ResultsScreen(score = score, totalQuestions = totalQuestions, onRestart = {
                 navController.popBackStack("category", false)
-            })
+            }, navController = navController)
         }
     }
 }

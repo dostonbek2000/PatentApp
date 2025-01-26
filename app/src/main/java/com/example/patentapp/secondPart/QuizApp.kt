@@ -43,10 +43,10 @@ fun QuizApp() {
             }
             composable("support") {
                 SupportScreen(
-                    cardA = "1234 5678 9012 3456",
-                    cardB = "6543 2109 8765 4321",
-                    nameA = "Dostonbek Husanov",
-                    nameB = "Dostonbek Husanov"
+                    cardA = "+79858934045",
+                    cardB = "4073 4200 8390 9121",
+                    nameA = "Нурулла Кенжахўжаев",
+                    nameB = "Nurulla Kenjaxo'jayev"
                 )
             }
             composable("question/{categoryId}") { backStackEntry ->
@@ -65,7 +65,7 @@ fun QuizApp() {
                     backStackEntry.arguments?.getString("totalQuestions")?.toInt() ?: 0
                 ResultsScreen(score = score, totalQuestions = totalQuestions, onRestart = {
                     navController.popBackStack("category", false)
-                })
+                },navController)
             }
         }
     }
