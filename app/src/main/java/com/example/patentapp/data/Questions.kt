@@ -512,7 +512,7 @@ fun getQuestionsForCategory(categoryId: Int): List<MainData> {
             ),
             MainData(
                 question = "Какой из этих городов находится в России?",
-                answers = listOf("София", "Прага", ""),
+                answers = listOf("София", "Прага", "Новосибирск"),
                 correctAnswer = "Новосибирск"
             ),
             MainData(
@@ -551,7 +551,7 @@ fun getQuestionsForCategory(categoryId: Int): List<MainData> {
             ),
             MainData(
                 question = "Куда следует обратиться человеку, если его ограбили?",
-                answers = listOf("в полицию", "в суд", "в полицию"),
+                answers = listOf("в полицию", "в суд", "в отдел кадров по месту работы"),
                 correctAnswer = "в полицию"
             ),
             MainData(
@@ -655,6 +655,7 @@ fun getQuestionsForCategory(categoryId: Int): List<MainData> {
                 ),
                 correctAnswer = "советские войска взяли Берлин"
             ),
+            //http://tplinkmodem.net
             MainData(
                 question = "В 1961 г. совершил полёт в космос",
                 answers = listOf("Ю.А. Гагарин", "Б.Н. Ельцин", "Г.К. Жуков"),
@@ -788,7 +789,7 @@ fun getQuestionsForCategory(categoryId: Int): List<MainData> {
             MainData(
                 question = "Конституция России была принята",
                 answers = listOf("в 1812 г.","в 1941 г.","в 1993 г."),
-                correctAnswer = ""
+                correctAnswer = "в 1993 г."
             ),
             MainData(
                 question = "Укажите Государственный флаг Российской Федерации.",
